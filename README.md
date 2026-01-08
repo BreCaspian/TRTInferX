@@ -529,17 +529,6 @@ PYTHON_BIN=$(which python) TRTInferX/scripts/export_onnx.py \
     auto res = engine.infer({in}, opt);           // 只要 Det
     auto res2 = engine.inferWithInfo({in}, opt);  // Det + 预处理尺度信息
 ```
-
----
-
-## GPU NMS 导出示例
-
-```bash
-yolo export model=path/to/best.pt format=engine int8=True nms=True batch=16 dynamic=True
-```
-
-> `nms=True` + `dynamic=True` 需要设置 `batch>1` 作为最大 batch。
-
 ---
 
 <p align="center">
