@@ -160,16 +160,19 @@
 
 ---
 
-<div style="display:flex; flex-wrap:nowrap; gap:0; margin:0; padding:0; overflow-x:auto;">
+<div align="center">
   <img src="FPSvsBatch.png" alt="FPS vs Batch"
-       style="flex:0 0 33.333%; width:33.333%; height:auto; display:block; margin:0; padding:0;" />
-  <img src="MeanLatencyvsBatch.png" alt="Mean Latency vs Batch"
-       style="flex:0 0 33.333%; width:33.333%; height:auto; display:block; margin:0; padding:0;" />
-  <img src="INT8LatencyBreakdown.png" alt="INT8 Latency Breakdown"
-       style="flex:0 0 33.333%; width:33.333%; height:auto; display:block; margin:0; padding:0;" />
-</div>
+       style="display:block; max-width:100%; height:auto; margin:0 auto;" />
+  <div><em>FPS vs Batch.</em></div>
 
-<div align="center"><em>Figures left to right: FPS vs Batch, Mean Latency vs Batch, and INT8 Latency Breakdown.</em></div>
+  <img src="MeanLatencyvsBatch.png" alt="Mean Latency vs Batch"
+       style="display:block; max-width:100%; height:auto; margin:0 auto;" />
+  <div><em>Mean Latency vs Batch.</em></div>
+
+  <img src="INT8LatencyBreakdown.png" alt="INT8 Latency Breakdown"
+       style="display:block; max-width:100%; height:auto; margin:0 auto;" />
+  <div><em>INT8 Latency Breakdown.</em></div>
+</div>
 
 
 ---
