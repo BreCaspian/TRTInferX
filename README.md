@@ -1,6 +1,6 @@
 # TRTInferX For YOLOv11 🚀
 
-专为 **华北理工大学 HORIZON 战队 ROBOMASTER 2026 雷达组雷达定位系统与反无人机激光追踪系统**设计的 [YOLOv11](https://arxiv.org/abs/2410.17725) INT8 PTQ 高性能 TensorRT 推理引擎。
+专为 **华北理工大学 HORIZON 战队 ROBOMASTER 2026 雷达组雷达定位系统与反无人机激光追踪系统** 设计的 [YOLOv11](https://arxiv.org/abs/2410.17725) INT8 PTQ 高性能 TensorRT 推理引擎。
 
 ![Demo](docs/result.gif)
 
