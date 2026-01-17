@@ -505,7 +505,7 @@ PYTHON_BIN=$(which python) TRTInferX/scripts/export_onnx.py \
 - `Det { x1,y1,x2,y2(原图坐标), score, cls, batch, mask/pose 可选 }`。
 - `PreprocInfo { scale, scale_x, scale_y, padw, padh, src_w, src_h }`，用于对齐下游坐标。
 
-引擎配置/选项：
+引擎配置：
 - `EngineConfig { engine_path, device, max_batch, streams, auto_streams, prep, target_w/h, out_mode(AUTO/PACKED_NMS/RAW_WITH_NMS/RAW_ONLY), nms_score, nms_iou }`
 - `InferOptions { conf, iou, apply_sigmoid=false, max_det, stream_override, box_fmt(cxcywh/xyxy) }`
 - 内部自适应 nms=True/False、packed/raw；静态批强制对齐，动态批 setInputShape。
