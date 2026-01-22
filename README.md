@@ -14,7 +14,7 @@
 
 - 面向 YOLOv11 **目标检测**的高性能推理引擎，支持 FP16 和 INT8 与静态和动态 batch，兼容 `nms=True`（引擎内 EfficientNMS）与 `nms=False`（raw 输出 + 内部 NMS）两种导出路径。预处理、解码与坐标还原在 CUDA 侧完成，输入规范与 Ultralytics 默认流程一致，兼顾性能与可迁移性。可以尝试 YOLOv5/v8/v9 等模型，未实际测试，理论上只要解码逻辑相同就可以通用。最优量化策略推荐 [QAT](https://github.com/Infrasys-AI/AISystem/blob/main/04Inference/03Slim/03QAT.md).
 
-- 实测（KITTI 视频，RTX 3060 Laptop GPU）最高稳定约 **301.9 FPS**（INT8 Dynamic batch=16）；基于 `trtexec` 测算的满负载端到端峰值约 **1522.66 FPS**（INT8 batch=32，infStreams=2，含传输）**746.28 FPS**（FP16 batch=64，infStreams=1，含传输）；理论算力上限（`trtexec --noDataTransfers`）可达约 **1858 FPS**（INT8 batch=128），用于衡量纯推理上限，端到端会受 H2D/D2H 影响,性能测试报告[`Performance report`](docs/PerformanceReport.md) 。
+- 实测（KITTI 视频，RTX 3060 Laptop GPU）最高稳定约 **301.9 FPS**（INT8 Dynamic batch=16）；基于 `trtexec` 测算的满负载端到端峰值约 **1522.66 FPS**（INT8 batch=32，infStreams=2，含传输）**746.28 FPS**（FP16 batch=64，infStreams=1，含传输）；理论算力上限（`trtexec --noDataTransfers`）可达约 **1858 FPS**（INT8 batch=128），用于衡量纯推理上限，端到端会受 H2D/D2H 影响，性能测试报告[`Performance report`](docs/PerformanceReport.md) 。
 
 - 注：测试环境在实测中未最大发挥推理引擎上限，**真实性能应接近测算结果**（为了有效获得相关指标运算平台本身有大量不相关负载开销）；另外，测试模型来自Ultralytics官方所公布的  [yolov11n.pt](https://docs.ultralytics.com/zh/models/yolo11/) ，未对模型结构进行调整，若优化模型结构可进一步提升性能上限。
 - 所有 测试模型（.pt/.onnx/.engine）、测试数据（视频、图片）、测试结果（视频、图片） 都可以在 Release 中下载；同步提供[海康工业相机高性能驱动](https://github.com/BreCaspian/Hikrobot-Industrial-Camera-Driver)，可实现零拷贝GPU输入。
