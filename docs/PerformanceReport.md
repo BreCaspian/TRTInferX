@@ -204,7 +204,7 @@
 
 ### Full trtexec Benchmark Tables (InferTime.txt)
 
-**Data source**: `InferTime.txt` (`trtexec` performance summaries).
+**Data source**: `performance.txt` (`trtexec` performance summaries).
 **Derived metric**: `Effective FPS = Throughput(qps) × batch`.
 **Modes**:
 - **Compute-only** = `--noDataTransfers` (H2D/D2H excluded)
