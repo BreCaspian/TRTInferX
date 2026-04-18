@@ -38,6 +38,19 @@ using namespace nvonnxparser;
         }                                                      
     } while (0)
 
+// #define CHECK(status) \
+//     do \
+//     { \
+//         auto ret = (status); \
+//         if (ret != 0) \
+//         { \
+//             std::cerr << "Cuda failure: " << ret << std::endl; \
+//             abort(); \
+//         } \
+//     } while (0)
+// This may cause compilation to fail; if that happens, simply replace it with the code below to resolve the issue.
+// Without the backslash \, the compiler will treat the line #define CHECK(status) as complete, making it an empty macro. It will then interpret the subsequent do { ... } while(0) as ordinary code in the global scope.
+        
 #define MAX_IMAGE_INPUT_SIZE_THRESH 10000 * 10000
 #define MAX_OUTPUT_BBOX_COUNT 1000
 
